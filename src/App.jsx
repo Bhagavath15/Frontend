@@ -461,6 +461,7 @@ function Pagination() {
   return (
     <div className="pagination">
       <span onClick={() => navigate(-1)}><i class="bi bi-chevron-left"></i></span>
+      <span onClick={() => navigate("/")}>0</span>
       <span onClick={() => navigate("/1")}>1</span>
       <span onClick={() => navigate("/2")}>2</span>
       <span onClick={() => navigate("/3")}>3</span>
