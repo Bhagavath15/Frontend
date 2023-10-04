@@ -1,18 +1,18 @@
-export function FirstPage({ car1, search }) {
+export function FifthPage({ car5, search }) {
 
     return (
         <div className="card-container">
-            {car1.filter((detail) => {
+            {car5.filter((detail) => {
                 if (search === "") {
                     return detail;
                 } else if (detail.carName.toLowerCase().includes(search.toLowerCase())) {
                     return detail;
                 }
-            }).map((car, index) => <FirstPageCards car={car} key={index} />)}
+            }).map((car, index) => <FifthPageCards car={car} key={index} />)}
         </div>
     );
 }
-function FirstPageCards({ car }) {
+function FifthPageCards({ car }) {
 
     return (
         <div className="card">

@@ -1,67 +1,14 @@
-export function SecondPage() {
-    const car = [{
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    },
-    {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    },
-    {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    },
-    {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    },
-    {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    },
-    {
-        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsVpx5BTyDSa0lQcVi814TXTr_INyAFcYzBQ&usqp=CAU",
-        "carName": "Toyota RAV4",
-        "model": "2021",
-        "person": "4",
-        "fuel": "Hybrid",
-        "mileage": "6.1km/1-litre",
-        "gearType": "Automatic",
-        "price": "$620"
-    }];
+export function SecondPage({ car2, search }) {
+
     return (
         <div className="card-container">
-            {car.map((car, index) => <SecondPageCards car={car} key={index} />)}
+            {car2.filter((detail) => {
+                if (search === "") {
+                    return detail;
+                } else if (detail.carName.toLowerCase().includes(search.toLowerCase())) {
+                    return detail;
+                }
+            }).map((car, index) => <SecondPageCards car={car} key={index} />)}
         </div>
     );
 }
